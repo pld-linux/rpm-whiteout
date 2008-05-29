@@ -1,8 +1,8 @@
-%define		rev	%(R="$Revision: 1.1 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.2 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
-Release:	0.2
+Release:	1
 License:	GPL
 Group:		Base
 BuildArch:	noarch
