@@ -1,4 +1,4 @@
-%define		rev	%(R="$Revision: 1.2 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.3 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -32,7 +32,9 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 %%_dependency_whiteout	\
 	php-pear-Console_Getopt>php-pear-PEAR-core \
 	vim>vim-rt
-
+	vim-plugin-securemodelines>vim-rt
+	vim-syntax-spec>vim-rt
+	vim-syntax-poldek>vim-rt
 EOF
 
 %clean
