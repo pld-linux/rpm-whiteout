@@ -1,4 +1,4 @@
-%define		rev	%(R="$Revision: 1.4 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.5 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -10,7 +10,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 PLD Linux RPM macros dealing with loop errors in RPM packages in PLD Linux
-Distribution that can't solved easily or at all.
+Distribution that can't solved easily or not wanted to be solved.
 
 %prep
 %setup -qcT
@@ -35,6 +35,9 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	vim-plugin-securemodelines>vim-rt \
 	vim-syntax-spec>vim-rt \
 	vim-syntax-poldek>vim-rt \
+	lighttpd-mod_dirlisting>lighttpd \
+	lighttpd-mod_indexfile>lighttpd \
+	lighttpd-mod_staticfile>lighttpd \
 %%{nil}
 EOF
 
