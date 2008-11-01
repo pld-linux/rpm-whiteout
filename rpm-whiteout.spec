@@ -1,4 +1,4 @@
-%define		rev	%(R="$Revision: 1.6 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.7 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -38,6 +38,8 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	lighttpd>lighttpd-mod_dirlisting \
 	lighttpd>lighttpd-mod_indexfile \
 	lighttpd>lighttpd-mod_staticfile \
+	openssl>ca-certificates \
+	openssl-tools-perl>ca-certificates \
 %%{nil}
 EOF
 
