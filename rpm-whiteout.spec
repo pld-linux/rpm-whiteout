@@ -1,4 +1,4 @@
-%define		rev	%(R="$Revision: 1.11 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.12 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -41,6 +41,20 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	java-sun-jre>java-sun-tools \
 	glibc>glibc-misc \
 	glibc64>glibc-misc \
+	ZendFramework>ZendFramework-Zend_Date \
+	ZendFramework>ZendFramework-Zend_Exception \
+	ZendFramework>ZendFramework-Zend_Http \
+	ZendFramework>ZendFramework-Zend_Loader \
+	ZendFramework>ZendFramework-Zend_Registry \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Dojo \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Form \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Json \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Layout \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_View \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Wildfire \
+	ZendFramework-Zend_Json>ZendFramework-Zend_Cache \
+	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
+	ZendFramework-Zend_Session>ZendFramework-Zend_Db \
 %%{nil}
 EOF
 
