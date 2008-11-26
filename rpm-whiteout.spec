@@ -1,4 +1,4 @@
-%define		rev	%(R="$Revision: 1.13 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.14 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -53,6 +53,11 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	ZendFramework-Zend_Controller>ZendFramework-Zend_View \
 	ZendFramework-Zend_Json>ZendFramework-Zend_Cache \
 	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
+	gtk+2>gtk+2-cups \
+	kdelibs>kdelibs-shared \
+	perl-dirs>perl-base \
+	hal>hal-info \
+	amarok>amarok-xine \
 %%{nil}
 EOF
 
