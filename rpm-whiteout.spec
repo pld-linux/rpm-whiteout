@@ -1,4 +1,4 @@
-%define		rev	%(R="$Revision: 1.15 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.16 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -9,8 +9,9 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-PLD Linux RPM macros dealing with loop errors in RPM packages in PLD Linux
-Distribution that can't solved easily or not wanted to be solved.
+PLD Linux RPM macros dealing with loop errors in RPM packages in PLD
+Linux Distribution that can't solved easily or not wanted to be
+solved.
 
 %prep
 %setup -qcT
@@ -30,17 +31,13 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 #	and that both p and q are package names (i.e. no version/release).
 
 %%_dependency_whiteout	\
+	%{_dependency_whiteouts_subpkg}	\
 	php-pear-PEAR-core>php-pear-Console_Getopt \
 	vim-rt>vim \
 	vim-rt>vim-plugin-securemodelines \
 	vim-rt>vim-syntax-spec \
 	vim-rt>vim-syntax-poldek \
-	lighttpd>lighttpd-mod_dirlisting \
-	lighttpd>lighttpd-mod_indexfile \
-	lighttpd>lighttpd-mod_staticfile \
 	java-sun-jre>java-sun-tools \
-	glibc>glibc-misc \
-	glibc64>glibc-misc \
 	ZendFramework>ZendFramework-Zend_Date \
 	ZendFramework>ZendFramework-Zend_Exception \
 	ZendFramework>ZendFramework-Zend_Http \
@@ -53,12 +50,24 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	ZendFramework-Zend_Controller>ZendFramework-Zend_View \
 	ZendFramework-Zend_Json>ZendFramework-Zend_Cache \
 	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
-	gtk+2>gtk+2-cups \
 	kdelibs>kdelibs-shared \
 	perl-dirs>perl-base \
+%%{nil}
+
+# dependency whiteouts if main pkg requires it's subpkg, this should be handed
+# somehow in rpm itself, but for now keep the list.
+%%_dependency_whiteouts_subpkg	\
+	lighttpd>lighttpd-mod_dirlisting \
+	lighttpd>lighttpd-mod_indexfile \
+	lighttpd>lighttpd-mod_staticfile \
+	glibc>glibc-misc \
+	glibc64>glibc-misc \
+	gtk+2>gtk+2-cups \
 	hal>hal-info \
 	amarok>amarok-xine \
+	util-vserver>vserver-distro-pld \
 %%{nil}
+
 EOF
 
 %clean
