@@ -1,4 +1,6 @@
-%define		rev	%(R="$Revision: 1.16 $"; RR="${R##: }"; echo ${RR%%?})
+# TODO
+# - pick items from PLD-doc/RPM-loops.txt
+%define		rev	%(R="$Revision: 1.17 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
