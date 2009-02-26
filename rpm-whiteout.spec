@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.18 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.19 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -53,7 +53,6 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	ZendFramework-Zend_Json>ZendFramework-Zend_Cache \
 	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
 	kdelibs>kdelibs-shared \
-	perl-dirs>perl-base \
 	initramfs-tools>cryptsetup-luks-initramfs \
 	initramfs-tools>dmraid-initramfs \
 	initramfs-tools>lvm2-initramfs \
