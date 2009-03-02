@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.19 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.20 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -53,6 +53,15 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	ZendFramework-Zend_Json>ZendFramework-Zend_Cache \
 	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
 	kdelibs>kdelibs-shared \
+	kdebase-desktop>kde-kside-PLD \
+	kdebase-desktop>kde-logoutpic-PLD \
+	kdebase-desktop>kde-splash-Default \
+	konqueror>kdeaddons-fsview \
+	konqueror>kdeaddons-konqueror \
+	konqueror>kdemultimedia-audiocd \
+	koffice-kexi>koffice-kspread \
+	rc-scripts>blockdev \
+	esound-libs>esound-alsa \
 	initramfs-tools>cryptsetup-luks-initramfs \
 	initramfs-tools>dmraid-initramfs \
 	initramfs-tools>lvm2-initramfs \
@@ -61,6 +70,9 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	initramfs-tools>openct-initramfs \
 	initramfs-tools>opensc-initramfs \
 	initramfs-tools>udev-initramfs \
+	gmplayer>mplayer-skin-KDE \
+	QtGui>Qt3Support \
+	QtGui>QtSvg \
 %%{nil}
 
 # dependency whiteouts if main pkg requires it's subpkg, this should be handed
