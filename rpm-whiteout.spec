@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.22 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.23 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -35,7 +35,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 # Note: these are PACKAGE names, not Provide names.
 
 %%_dependency_whiteout	\
-	%{_dependency_whiteouts_subpkg}	\
+	%%{_dependency_whiteouts_subpkg}	\
 	php-pear-PEAR-core>php-pear-Console_Getopt \
 	vim-rt>vim \
 	vim-rt>vim-plugin-securemodelines \
