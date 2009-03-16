@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.21 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.22 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -29,8 +29,10 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 #	where package p has a Requires: on something that package q Provides:
 #	so q is installed before p normally.
 #
-# XXX	Note: that there cannot be any whitespace within the string "p>q",
+# Note: that there cannot be any whitespace within the string "p>q",
 #	and that both p and q are package names (i.e. no version/release).
+
+# Note: these are PACKAGE names, not Provide names.
 
 %%_dependency_whiteout	\
 	%{_dependency_whiteouts_subpkg}	\
@@ -87,7 +89,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	hal>hal-info \
 	amarok>amarok-xine \
 	util-vserver>vserver-distro-pld \
-	roundcubemail>roundcubemail-skin \
+	roundcubemail>roundcubemail-skin-default \
 %%{nil}
 
 EOF
