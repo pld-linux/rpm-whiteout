@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.25 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.26 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -84,8 +84,9 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	lighttpd>lighttpd-mod_dirlisting \
 	lighttpd>lighttpd-mod_indexfile \
 	lighttpd>lighttpd-mod_staticfile \
-	glibc>glibc-misc \
-	glibc64>glibc-misc \
+	glibc-misc>glibc \
+	glibc-misc>glibc64 \
+	glibc-localedb-all>glibc \
 	gtk+2>gtk+2-cups \
 	hal>hal-info \
 	amarok>amarok-xine \
