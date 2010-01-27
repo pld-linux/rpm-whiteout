@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.29 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.30 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -44,6 +44,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	java-sun-jre>java-sun-tools \
 	openjdk-jre>openjdk-tools \
 	glibc>nss-softokn-freebl \
+	glibc>tzdata \
 	ZendFramework>ZendFramework-Zend_Date \
 	ZendFramework>ZendFramework-Zend_Exception \
 	ZendFramework>ZendFramework-Zend_Http \
