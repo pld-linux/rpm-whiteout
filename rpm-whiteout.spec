@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.30 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.31 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -27,7 +27,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 #	specified as
 #		p>q
 #	where package p has a Requires: on something that package q Provides:
-#	so q is installed before p normally.
+#	so p is installed before q normally.
 #
 # Note: that there cannot be any whitespace within the string "p>q",
 #	and that both p and q are package names (i.e. no version/release).
