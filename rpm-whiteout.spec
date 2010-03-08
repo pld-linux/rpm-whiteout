@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.31 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.32 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -45,17 +45,15 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	openjdk-jre>openjdk-tools \
 	glibc>nss-softokn-freebl \
 	glibc>tzdata \
-	ZendFramework>ZendFramework-Zend_Date \
-	ZendFramework>ZendFramework-Zend_Exception \
-	ZendFramework>ZendFramework-Zend_Http \
-	ZendFramework>ZendFramework-Zend_Loader \
-	ZendFramework>ZendFramework-Zend_Registry \
 	ZendFramework-Zend_Controller>ZendFramework-Zend_Dojo \
 	ZendFramework-Zend_Controller>ZendFramework-Zend_Json \
 	ZendFramework-Zend_Controller>ZendFramework-Zend_Layout \
 	ZendFramework-Zend_Controller>ZendFramework-Zend_Session \
 	ZendFramework-Zend_Controller>ZendFramework-Zend_View \
-	ZendFramework-Zend_Json>ZendFramework-Zend_Cache \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Uri \
+	ZendFramework-Zend_Validate>ZendFramework-Zend_Uri \
+	ZendFramework-Zend_Cache>ZendFramework-Zend_Json \
+	ZendFramework-Zend_Cache>ZendFramework-Zend_Log \
 	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
 	kdelibs>kdelibs-shared \
 	kdebase-desktop>kde-kside-PLD \
