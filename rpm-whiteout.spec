@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.32 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.33 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -95,6 +95,9 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	util-vserver-build>vserver-distro-pld \
 	roundcubemail>roundcubemail-skin-default \
 	php-simplexml>php-spl \
+	phorum>phorum-db-mysql \
+	phorum>phorum-db-mysqli \
+	phorum>phorum-db-sql_pool \
 %%{nil}
 
 EOF
