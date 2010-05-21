@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.33 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.34 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -76,6 +76,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	gmplayer>mplayer-skin-KDE \
 	QtGui>Qt3Support \
 	QtGui>QtSvg \
+	upstart>dbus \
 %%{nil}
 
 # dependency whiteouts if main pkg requires it's subpkg, this should be handed
