@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.34 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.35 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -36,35 +36,10 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 
 %%_dependency_whiteout	\
 	%%{_dependency_whiteouts_subpkg}	\
-	php-pear-PEAR-core>php-pear-Console_Getopt \
-	vim-rt>vim \
-	vim-rt>vim-plugin-securemodelines \
-	vim-rt>vim-syntax-spec \
-	vim-rt>vim-syntax-poldek \
-	java-sun-jre>java-sun-tools \
-	openjdk-jre>openjdk-tools \
+	esound-libs>esound-alsa \
 	glibc>nss-softokn-freebl \
 	glibc>tzdata \
-	ZendFramework-Zend_Controller>ZendFramework-Zend_Dojo \
-	ZendFramework-Zend_Controller>ZendFramework-Zend_Json \
-	ZendFramework-Zend_Controller>ZendFramework-Zend_Layout \
-	ZendFramework-Zend_Controller>ZendFramework-Zend_Session \
-	ZendFramework-Zend_Controller>ZendFramework-Zend_View \
-	ZendFramework-Zend_Controller>ZendFramework-Zend_Uri \
-	ZendFramework-Zend_Validate>ZendFramework-Zend_Uri \
-	ZendFramework-Zend_Cache>ZendFramework-Zend_Json \
-	ZendFramework-Zend_Cache>ZendFramework-Zend_Log \
-	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
-	kdelibs>kdelibs-shared \
-	kdebase-desktop>kde-kside-PLD \
-	kdebase-desktop>kde-logoutpic-PLD \
-	kdebase-desktop>kde-splash-Default \
-	konqueror>kdeaddons-fsview \
-	konqueror>kdeaddons-konqueror \
-	konqueror>kdemultimedia-audiocd \
-	koffice-kexi>koffice-kspread \
-	rc-scripts>blockdev \
-	esound-libs>esound-alsa \
+	gmplayer>mplayer-skin-KDE \
 	initramfs-tools>cryptsetup-luks-initramfs \
 	initramfs-tools>dmraid-initramfs \
 	initramfs-tools>lvm2-initramfs \
@@ -73,32 +48,57 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	initramfs-tools>openct-initramfs \
 	initramfs-tools>opensc-initramfs \
 	initramfs-tools>udev-initramfs \
-	gmplayer>mplayer-skin-KDE \
+	java-sun-jre>java-sun-tools \
+	kdebase-desktop>kde-kside-PLD \
+	kdebase-desktop>kde-logoutpic-PLD \
+	kdebase-desktop>kde-splash-Default \
+	kdelibs>kdelibs-shared \
+	koffice-kexi>koffice-kspread \
+	konqueror>kdeaddons-fsview \
+	konqueror>kdeaddons-konqueror \
+	konqueror>kdemultimedia-audiocd \
+	openjdk-jre>openjdk-tools \
+	php-pear-PEAR-core>php-pear-Console_Getopt \
 	QtGui>Qt3Support \
 	QtGui>QtSvg \
+	rc-scripts>blockdev \
 	upstart>dbus \
+	vim-rt>vim \
+	vim-rt>vim-plugin-securemodelines \
+	vim-rt>vim-syntax-poldek \
+	vim-rt>vim-syntax-spec \
+	ZendFramework-Zend_Cache>ZendFramework-Zend_Json \
+	ZendFramework-Zend_Cache>ZendFramework-Zend_Log \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Dojo \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Json \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Layout \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Session \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_Uri \
+	ZendFramework-Zend_Controller>ZendFramework-Zend_View \
+	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
+	ZendFramework-Zend_Validate>ZendFramework-Zend_Uri \
 %%{nil}
 
 # dependency whiteouts if main pkg requires it's subpkg, this should be handed
 # somehow in rpm itself, but for now keep the list.
 %%_dependency_whiteouts_subpkg	\
+	amarok>amarok-xine \
+	glibc-localedb-all>glibc \
+	glibc-misc>glibc \
+	glibc-misc>glibc64 \
+	gtk+2>gtk+2-cups \
+	hal>hal-info \
 	lighttpd>lighttpd-mod_dirlisting \
 	lighttpd>lighttpd-mod_indexfile \
 	lighttpd>lighttpd-mod_staticfile \
-	glibc-misc>glibc \
-	glibc-misc>glibc64 \
-	glibc-localedb-all>glibc \
 	localedb-src>glibc \
-	gtk+2>gtk+2-cups \
-	hal>hal-info \
-	amarok>amarok-xine \
-	util-vserver>vserver-distro-pld \
-	util-vserver-build>vserver-distro-pld \
-	roundcubemail>roundcubemail-skin-default \
-	php-simplexml>php-spl \
 	phorum>phorum-db-mysql \
 	phorum>phorum-db-mysqli \
 	phorum>phorum-db-sql_pool \
+	php-simplexml>php-spl \
+	roundcubemail>roundcubemail-skin-default \
+	util-vserver-build>vserver-distro-pld \
+	util-vserver>vserver-distro-pld \
 %%{nil}
 
 EOF
