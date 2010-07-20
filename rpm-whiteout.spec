@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.36 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.37 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -36,7 +36,6 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 
 %%_dependency_whiteout	\
 	%%{_dependency_whiteouts_subpkg}	\
-	esound-libs>esound-alsa \
 	glibc>nss-softokn-freebl \
 	glibc>tzdata \
 	gmplayer>mplayer-skin-KDE \
@@ -81,16 +80,17 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
 	ZendFramework-Zend_Validate>ZendFramework-Zend_Uri \
 	amarok>amarok-xine \
+	esound-libs>esound-alsa \
 	glibc-localedb-all>glibc \
 	glibc-misc>glibc \
 	glibc-misc>glibc64 \
+	glibc>localedb-src \
 	gtk+2>gtk+2-cups \
 	hal>hal-info \
 	java-sun-jre>java-sun-tools \
 	lighttpd>lighttpd-mod_dirlisting \
 	lighttpd>lighttpd-mod_indexfile \
 	lighttpd>lighttpd-mod_staticfile \
-	localedb-src>glibc \
 	phorum>phorum-db-mysql \
 	phorum>phorum-db-mysqli \
 	phorum>phorum-db-sql_pool \
@@ -98,7 +98,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	roundcubemail>roundcubemail-skin-default \
 	util-vserver-build>vserver-distro-pld \
 	util-vserver>vserver-distro-pld \
-	vim-rt>vim \
+	vim>vim-rt \
 %%{nil}
 
 EOF
