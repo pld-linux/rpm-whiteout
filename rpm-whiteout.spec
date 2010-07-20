@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.35 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.36 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -48,7 +48,6 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	initramfs-tools>openct-initramfs \
 	initramfs-tools>opensc-initramfs \
 	initramfs-tools>udev-initramfs \
-	java-sun-jre>java-sun-tools \
 	kdebase-desktop>kde-kside-PLD \
 	kdebase-desktop>kde-logoutpic-PLD \
 	kdebase-desktop>kde-splash-Default \
@@ -59,14 +58,18 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	konqueror>kdemultimedia-audiocd \
 	openjdk-jre>openjdk-tools \
 	php-pear-PEAR-core>php-pear-Console_Getopt \
-	QtGui>Qt3Support \
-	QtGui>QtSvg \
 	rc-scripts>blockdev \
 	upstart>dbus \
-	vim-rt>vim \
 	vim-rt>vim-plugin-securemodelines \
 	vim-rt>vim-syntax-poldek \
 	vim-rt>vim-syntax-spec \
+%%{nil}
+
+# dependency whiteouts if main pkg requires it's subpkg, this should be handed
+# somehow in rpm itself, but for now keep the list.
+%%_dependency_whiteouts_subpkg	\
+	QtGui>Qt3Support \
+	QtGui>QtSvg \
 	ZendFramework-Zend_Cache>ZendFramework-Zend_Json \
 	ZendFramework-Zend_Cache>ZendFramework-Zend_Log \
 	ZendFramework-Zend_Controller>ZendFramework-Zend_Dojo \
@@ -77,17 +80,13 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	ZendFramework-Zend_Controller>ZendFramework-Zend_View \
 	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
 	ZendFramework-Zend_Validate>ZendFramework-Zend_Uri \
-%%{nil}
-
-# dependency whiteouts if main pkg requires it's subpkg, this should be handed
-# somehow in rpm itself, but for now keep the list.
-%%_dependency_whiteouts_subpkg	\
 	amarok>amarok-xine \
 	glibc-localedb-all>glibc \
 	glibc-misc>glibc \
 	glibc-misc>glibc64 \
 	gtk+2>gtk+2-cups \
 	hal>hal-info \
+	java-sun-jre>java-sun-tools \
 	lighttpd>lighttpd-mod_dirlisting \
 	lighttpd>lighttpd-mod_indexfile \
 	lighttpd>lighttpd-mod_staticfile \
@@ -99,6 +98,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	roundcubemail>roundcubemail-skin-default \
 	util-vserver-build>vserver-distro-pld \
 	util-vserver>vserver-distro-pld \
+	vim-rt>vim \
 %%{nil}
 
 EOF
