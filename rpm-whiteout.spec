@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.37 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.38 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Name:		rpm-whiteout
 Version:	%{rev}
@@ -36,6 +36,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 
 %%_dependency_whiteout	\
 	%%{_dependency_whiteouts_subpkg}	\
+	fontpostinst>t1lib \
 	glibc>nss-softokn-freebl \
 	glibc>tzdata \
 	gmplayer>mplayer-skin-KDE \
@@ -55,7 +56,6 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	konqueror>kdeaddons-fsview \
 	konqueror>kdeaddons-konqueror \
 	konqueror>kdemultimedia-audiocd \
-	openjdk-jre>openjdk-tools \
 	php-pear-PEAR-core>php-pear-Console_Getopt \
 	rc-scripts>blockdev \
 	upstart>dbus \
@@ -79,22 +79,34 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	ZendFramework-Zend_Controller>ZendFramework-Zend_View \
 	ZendFramework-Zend_Layout>ZendFramework-Zend_View \
 	ZendFramework-Zend_Validate>ZendFramework-Zend_Uri \
+	ZendFramework>ZendFramework-Zend_Date \
+	ZendFramework>ZendFramework-Zend_Exception \
+	ZendFramework>ZendFramework-Zend_Http \
+	ZendFramework>ZendFramework-Zend_Loader \
+	ZendFramework>ZendFramework-Zend_Loader \
+	ZendFramework>ZendFramework-Zend_Registry \
 	amarok>amarok-xine \
 	esound-libs>esound-alsa \
-	glibc-localedb-all>glibc \
-	glibc-misc>glibc \
-	glibc-misc>glibc64 \
+	glibc64>glibc-misc \
+	glibc>glibc-localedb-all \
+	glibc>glibc-misc \
 	glibc>localedb-src \
 	gtk+2>gtk+2-cups \
 	hal>hal-info \
+	java-sun-jre>java-sun-jre-X11 \
 	java-sun-jre>java-sun-tools \
 	lighttpd>lighttpd-mod_dirlisting \
 	lighttpd>lighttpd-mod_indexfile \
 	lighttpd>lighttpd-mod_staticfile \
+	openjdk-jre>openjdk-tools \
 	phorum>phorum-db-mysql \
 	phorum>phorum-db-mysqli \
 	phorum>phorum-db-sql_pool \
-	php-simplexml>php-spl \
+	php-common>php-pcre \
+	php-common>php-session \
+	php-common>php-simplexml \
+	php-common>php-spl \
+	php-spl>php-simplexml \
 	roundcubemail>roundcubemail-skin-default \
 	util-vserver-build>vserver-distro-pld \
 	util-vserver>vserver-distro-pld \
