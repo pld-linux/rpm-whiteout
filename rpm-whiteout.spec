@@ -1,7 +1,8 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.38 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.39 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
+Summary(pl.UTF-8):	Makra RPM-a do rozwiązywania zapętlonych zależności w PLD Linuksie
 Name:		rpm-whiteout
 Version:	%{rev}
 Release:	1
@@ -14,6 +15,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 PLD Linux RPM macros dealing with loop errors in RPM packages in PLD
 Linux Distribution that can't solved easily or not wanted to be
 solved.
+
+%description -l pl.UTF-8
+Makra RPM-a do rozwiązywania w pakietach RPM dystrybucji PLD Linux
+zapętlonych zależności, których nie można inaczej rozwiązać w łatwy
+sposób.
 
 %prep
 %setup -qcT
