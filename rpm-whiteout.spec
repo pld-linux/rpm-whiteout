@@ -1,6 +1,6 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.39 $"; RR="${R##: }"; echo ${RR%%?})
+%define		rev	%(R="$Revision: 1.40 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Summary(pl.UTF-8):	Makra RPM-a do rozwiązywania zapętlonych zależności w PLD Linuksie
 Name:		rpm-whiteout
@@ -46,14 +46,6 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	glibc>nss-softokn-freebl \
 	glibc>tzdata \
 	gmplayer>mplayer-skin-KDE \
-	initramfs-tools>cryptsetup-luks-initramfs \
-	initramfs-tools>dmraid-initramfs \
-	initramfs-tools>lvm2-initramfs \
-	initramfs-tools>mdadm-initramfs \
-	initramfs-tools>multipath-tools-initramfs \
-	initramfs-tools>openct-initramfs \
-	initramfs-tools>opensc-initramfs \
-	initramfs-tools>udev-initramfs \
 	kdebase-desktop>kde-kside-PLD \
 	kdebase-desktop>kde-logoutpic-PLD \
 	kdebase-desktop>kde-splash-Default \
