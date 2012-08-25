@@ -1,10 +1,9 @@
 # TODO
 # - pick items from PLD-doc/RPM-loops.txt
-%define		rev	%(R="$Revision: 1.40 $"; RR="${R##: }"; echo ${RR%%?})
 Summary:	PLD Linux RPM macros dealing with loop errors
 Summary(pl.UTF-8):	Makra RPM-a do rozwiązywania zapętlonych zależności w PLD Linuksie
 Name:		rpm-whiteout
-Version:	%{rev}
+Version:	1.41
 Release:	1
 License:	GPL
 Group:		Base
@@ -105,6 +104,16 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	php-common>php-simplexml \
 	php-common>php-spl \
 	php-spl>php-simplexml \
+	php52-common>php52-pcre \
+	php52-common>php52-session \
+	php52-common>php52-simplexml \
+	php52-common>php52-spl \
+	php52-spl>php52-simplexml \
+	php54-common>php54-pcre \
+	php54-common>php54-session \
+	php54-common>php54-simplexml \
+	php54-common>php54-spl \
+	php54-spl>php54-simplexml \
 	roundcubemail>roundcubemail-skin-default \
 	util-vserver-build>vserver-distro-pld \
 	util-vserver>vserver-distro-pld \
@@ -118,5 +127,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-# this should be replaced on upgrade
+# this file should be replaced on upgrade
 %config %verify(not md5 mtime size) /etc/rpm/macros.whiteout
