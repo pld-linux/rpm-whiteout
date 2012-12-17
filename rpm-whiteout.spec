@@ -4,7 +4,7 @@ Summary:	PLD Linux RPM macros dealing with loop errors
 Summary(pl.UTF-8):	Makra RPM-a do rozwiązywania zapętlonych zależności w PLD Linuksie
 Name:		rpm-whiteout
 Version:	1.41
-Release:	1
+Release:	2
 License:	GPL
 Group:		Base
 BuildArch:	noarch
@@ -39,7 +39,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 
 # Note: these are PACKAGE names, not Provide names.
 
-%%_dependency_whiteout	\
+ %%_dependency_whiteout	\
 	%%{_dependency_whiteouts_subpkg}	\
 	fontpostinst>t1lib \
 	glibc>nss-softokn-freebl \
@@ -59,11 +59,11 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	vim-rt>vim-plugin-securemodelines \
 	vim-rt>vim-syntax-poldek \
 	vim-rt>vim-syntax-spec \
-%%{nil}
+ %%{nil}
 
 # dependency whiteouts if main pkg requires it's subpkg, this should be handed
 # somehow in rpm itself, but for now keep the list.
-%%_dependency_whiteouts_subpkg	\
+ %%_dependency_whiteouts_subpkg	\
 	QtGui>Qt3Support \
 	QtGui>QtSvg \
 	ZendFramework-Zend_Cache>ZendFramework-Zend_Json \
@@ -118,9 +118,10 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	util-vserver-build>vserver-distro-pld \
 	util-vserver>vserver-distro-pld \
 	vim>vim-rt \
-%%{nil}
-
+ %%{nil}
 EOF
+
+%{__sed} -i -e 's|^ %|%|g' $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 
 %clean
 rm -rf $RPM_BUILD_ROOT
