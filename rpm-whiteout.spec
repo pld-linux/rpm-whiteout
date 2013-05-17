@@ -4,9 +4,10 @@ Summary:	PLD Linux RPM macros dealing with loop errors
 Summary(pl.UTF-8):	Makra RPM-a do rozwiązywania zapętlonych zależności w PLD Linuksie
 Name:		rpm-whiteout
 Version:	1.41
-Release:	2
+Release:	3
 License:	GPL
 Group:		Base
+Requires:	rpm-base
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
