@@ -4,7 +4,7 @@ Summary:	PLD Linux RPM macros dealing with loop errors
 Summary(pl.UTF-8):	Makra RPM-a do rozwiązywania zapętlonych zależności w PLD Linuksie
 Name:		rpm-whiteout
 Version:	1.41
-Release:	3
+Release:	4
 License:	GPL
 Group:		Base
 Requires:	rpm-base
@@ -97,6 +97,8 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	lighttpd>lighttpd-mod_indexfile \
 	lighttpd>lighttpd-mod_staticfile \
 	openjdk-jre>openjdk-tools \
+	openvpn>openvpn-plugin-auth-pam \
+	openvpn>openvpn-plugin-down-root \
 	phorum>phorum-db-mysql \
 	phorum>phorum-db-mysqli \
 	phorum>phorum-db-sql_pool \
@@ -115,6 +117,7 @@ cat <<'EOF' > $RPM_BUILD_ROOT/etc/rpm/macros.whiteout
 	php54-common>php54-simplexml \
 	php54-common>php54-spl \
 	php54-spl>php54-simplexml \
+	python3-libs>python3 \
 	roundcubemail>roundcubemail-skin-default \
 	util-vserver-build>vserver-distro-pld \
 	util-vserver>vserver-distro-pld \
